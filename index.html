@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSupport | Domů</title>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
 </head>
@@ -22,12 +24,21 @@
         <a href="help.html">Nápověda</a>
         <a href="tickets.html">Moje požadavky</a>
         <a href="contact.html">Kontakt</a>
+
+        <div id="auth-navigation" style="display:flex; align-items:center; gap:12px;">
+            <a href="login.html">Přihlášení</a>
+            <a href="register.html" class="btn primary">Registrace</a>
+        </div>
+
         <button class="theme-toggle">☼</button>
     </nav>
 </header>
 
 <main>
+
+    <!-- HLAVNÍ SEKCE -->
     <section class="hero">
+
         <div class="hero-copy">
             <span class="eyebrow">● TECHNICKÁ PODPORA ONLINE</span>
 
@@ -37,8 +48,9 @@
             </h1>
 
             <p>
-                Jednoduchá a rychlá pomoc s počítačem, softwarem
-                i připojením k internetu. Najděte řešení nebo nám napište.
+                Jednoduchá a rychlá pomoc s počítačem, softwarem,
+                mobilními zařízeními i dalšími technickými problémy.
+                Najděte řešení nebo nám napište.
             </p>
 
             <div class="hero-actions">
@@ -58,6 +70,7 @@
 
         <div class="hero-visual">
             <div class="support-card">
+
                 <div class="support-card-top">
                     <span class="logo-icon">TS</span>
                     <span class="online-label">● Systém je online</span>
@@ -73,29 +86,35 @@
                 <div class="mini-row">⌁ Internet a síť <b>→</b></div>
             </div>
         </div>
+
     </section>
 
+    <!-- OBLASTI TECHNICKÉ PODPORY -->
     <section class="section">
+
         <div class="section-heading">
             <div>
                 <span class="eyebrow">S ČÍM POMŮŽEME</span>
                 <h2>Vyberte oblast problému</h2>
             </div>
 
-            <a href="help.html" class="text-link">Všechny návody →</a>
+            <a href="help.html" class="text-link">
+                Všechny návody →
+            </a>
         </div>
 
         <div class="category-grid">
+
             <a href="help.html#hardware" class="category-card">
                 <span class="category-icon blue">▣</span>
                 <h3>Hardware</h3>
-                <p>Počítač, monitor, klávesnice nebo tiskárna.</p>
+                <p>Počítače, monitory, klávesnice a další zařízení.</p>
             </a>
 
             <a href="help.html#software" class="category-card">
                 <span class="category-icon purple">◈</span>
                 <h3>Software</h3>
-                <p>Programy, aktualizace a operační systém.</p>
+                <p>Programy, aplikace a operační systémy.</p>
             </a>
 
             <a href="help.html#internet" class="category-card">
@@ -107,25 +126,35 @@
             <a href="help.html#other" class="category-card">
                 <span class="category-icon orange">✳</span>
                 <h3>Ostatní</h3>
-                <p>Všechny ostatní technické problémy.</p>
+                <p>Mobilní telefony, elektronika a další technické problémy.</p>
             </a>
+
         </div>
     </section>
 
+    <!-- VÝZVA K VYUŽITÍ PODPORY -->
     <section class="callout">
+
         <div>
             <span class="eyebrow">POTŘEBUJETE PORADIT?</span>
             <h2>Nejste si jistí, co dělat dál?</h2>
-            <p>Pošlete nám popis problému a vytvořte nový požadavek.</p>
+            <p>
+                Popište svůj problém a nechte si poradit
+                pomocí umělé inteligence.
+            </p>
         </div>
 
         <a href="contact.html" class="btn primary">
             Kontaktovat podporu →
         </a>
+
     </section>
+
 </main>
 
+<!-- PATIČKA -->
 <footer>
+
     <a href="index.html" class="logo">
         <span class="logo-icon">TS</span>
         Tech<span>Support</span>
@@ -137,7 +166,35 @@
         <a href="help.html">Nápověda</a>
         <a href="contact.html">Kontakt</a>
     </div>
+
 </footer>
+
+<!-- AUTENTIZACE -->
+<script src="js/auth.js"></script>
+
+<script>
+    const authNavigation = document.getElementById("auth-navigation");
+
+    if (authNavigation) {
+        const user = getLoggedUser();
+
+        if (user) {
+            authNavigation.replaceChildren();
+
+            const welcome = document.createElement("span");
+            welcome.textContent = "👤 " + user.name;
+            welcome.style.color = "inherit";
+
+            const logoutButton = document.createElement("button");
+            logoutButton.textContent = "Odhlásit se";
+            logoutButton.type = "button";
+            logoutButton.className = "btn secondary";
+            logoutButton.addEventListener("click", logoutUser);
+
+            authNavigation.append(welcome, logoutButton);
+        }
+    }
+</script>
 
 </body>
 </html>
