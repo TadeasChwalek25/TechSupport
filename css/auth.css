@@ -1,1 +1,159 @@
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1120;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.auth-card {
+    background: #111c31;
+    padding: 35px;
+    border: 1px solid #26364f;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.auth-card h1 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    background: #0b1425;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #38bdf8;
+}
+
+.form-group input::placeholder {
+    color: #64748b;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 5px;
+}
+
+.auth-button:hover {
+    background: #0369a1;
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 24px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.switch-text a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #38bdf8;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.message.success {
+    color: #4ade80;
+}
+
+.message.error {
+    color: #f87171;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 24px;
+    }
+}
