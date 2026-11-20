@@ -1,1 +1,47 @@
 
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přihlášení | TechSupport</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+
+    <div class="auth-container">
+        <a href="index.html" class="logo">Tech<span>Support</span></a>
+
+        <div class="auth-card">
+            <h1>Vítej zpět!</h1>
+            <p class="subtitle">Přihlas se ke svému účtu</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-mail</label>
+                    <input type="email" id="loginEmail" placeholder="example@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Heslo</label>
+                    <input type="password" id="loginPassword" placeholder="Tvoje heslo" required>
+                </div>
+
+                <button type="submit" class="auth-button">Přihlásit se</button>
+
+                <p id="loginMessage" class="message"></p>
+            </form>
+
+            <p class="switch-text">
+                Nemáš účet?
+                <a href="register.html">Zaregistruj se</a>
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
+    </div>
+
+</body>
+</html>
+
